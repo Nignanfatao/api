@@ -38,7 +38,7 @@
   "health_checks": [],
   "skip_cache": false,
   "git": {
-    "repository": "https://github.com/BrunoSobrino/api",
+    "repository": "https://github.com/Nignanfatao/api",
     "branch": "koyeb",
     "tag": "",
     "sha": "",
@@ -53,7 +53,7 @@
     }
   },
   "domain": {
-    "name": "api-brunosobrino.koyeb.app",
+    "name": "api-ovl-md.koyeb.app",
     "custom_domain": true
   }
 }
