@@ -3,25 +3,38 @@
   "type": "WEB",
   "routes": [
     {
-      "port": 2027,
+      "port": 8080,
       "path": "/"
     }
   ],
   "ports": [
     {
-      "port": 2027,
+      "port": 8080,
       "protocol": "http"
     }
   ],
-  "env": [],
-  "regions": [
-    "fra"
+  "env": [
+    {
+      "key": "JWT_SECRET",
+      "value": "ovl_md_key"
+    },
+    {
+      "key": "SMTP_USER",
+      "value": "nignanfatao12345@gmail.com"
+    },
+    {
+      "key": "SMTP_PASSWORD",
+      "value": "famillenignan1@"
+    },
+    {
+      "key": "USE_RECAPTCHA",
+      "value": "false"
+    }
   ],
+  "regions": ["fra"],
   "scalings": [
     {
-      "scopes": [
-        "region:fra"
-      ],
+      "scopes": ["region:fra"],
       "min": 1,
       "max": 1,
       "targets": []
@@ -29,28 +42,18 @@
   ],
   "instance_types": [
     {
-      "scopes": [
-        "region:fra"
-      ],
+      "scopes": ["region:fra"],
       "type": "free"
     }
   ],
   "health_checks": [],
-  "skip_cache": false,
+  "skip_cache": true,
   "git": {
     "repository": "https://github.com/Nignanfatao/api",
     "branch": "koyeb",
-    "tag": "",
-    "sha": "",
-    "build_command": "npm install",
+    "build_command": "npm ci",
     "run_command": "npm start",
-    "no_deploy_on_push": false,
-    "workdir": "",
-    "buildpack": {
-      "build_command": "npm install",
-      "run_command": "npm start",
-      "privileged": false
-    }
+    "no_deploy_on_push": false
   },
   "domain": {
     "name": "api-ovl-md.koyeb.app",
