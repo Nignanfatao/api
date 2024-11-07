@@ -8,6 +8,9 @@ RUN apt-get update && \
   apt-get upgrade -y && \
   rm -rf /var/lib/apt/lists/*
 
+RUN git clone https://github.com/Nignanfatao/api /api/
+WORKDIR /api/
+
 COPY package.json .
 
 RUN npm install
